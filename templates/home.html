@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+<body style="background-image: url(/static/images/nature.jpg); background-position: center; background-clip: cover;  background-color: gray; background-blend-mode: multiply;">
+    <div class="home">
+        <a href="/cropClass">
+            <figure>
+                <img src="/static/images/icons/sugarcane.png" alt="crop">
+                <figcaption>Crop Recommendation</figcaption>
+            </figure>
+        </a>        
+        <a href="/disease">
+            <figure>
+                <img src="/static/images/icons/insecticide.png" alt="disease">
+                <figcaption>Disease detection</figcaption>
+            </figure>
+        </a>  
+        <a href="/predictYield">
+            <figure>
+                <img src="/static/images/icons/grasspile.png" alt="yield">
+                <figcaption>Yield Calculation</figcaption>
+            </figure>
+        </a>
+        <a href="/chatbot">
+            <figure>
+                <img src="/static/images/icons/farmer.png" alt="chatbot">
+                <figcaption>Dave the Farmer</figcaption>
+            </figure>
+        </a>
+    </div>
+</body>
+</html>

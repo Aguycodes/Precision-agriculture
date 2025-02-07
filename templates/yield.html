@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Prediction</title>
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="yield" style="background-image: url(/static/images/potato.jpg);">
+        <h2>Enter Data for Prediction</h2>
+        <form action="/predYield" method="post">
+            <label for="Region">Region</label>
+            <select name="Region" id="Region">
+                <option value="North">North</option>
+                <option value="West">West</option>
+                <option value="South">South</option>
+                <option value="East">East</option>
+            </select>
+            <label for="Soil_Type">Soil Type</label>
+            <select name="Soil_Type" id="Soil_Type">
+                <option value="Sandy">Sandy</option>
+                <option value="Loam">Loam</option>
+                <option value="Chalky">Chalky</option>
+                <option value="Silt">Silt</option>
+                <option value="Clay">Clay</option>
+                <option value="Peaty">Peaty</option>
+            </select>
+            <label for="Crop">Crop</label>
+            <select name="Crop" id="Crop">
+                <option value="Maize">Maize</option>
+                <option value="Rice">Rice</option>
+                <option value="Barley">Barley</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Soybean">Soybean</option>
+            </select>
+            <label for="Rainfall_mm">Rainfall</label>
+            <input type="number" name="Rainfall_mm" id="Rainfall_mm" required>
+            <label for="Temperature_Celsius">Temperature</label>
+            <input type="number" name="Temperature_Celsius" id="Temperature_Celsius" required>
+            <label for="Fertilizer_Used">Ferilizer</label>
+            <select name="Fertilizer_Used" id="Fertilizer_Used">
+                <option value="TRUE">True</option>
+                <option value="FALSE">False</option>
+            </select>
+            <label for="Irrigation_Used">Irrigation</label>
+            <select name="Irrigation_Used" id="Irrigation_Used">
+                <option value="TRUE">True</option>
+                <option value="FALSE">False</option>
+            </select>
+            <label for="Weather_Condition">Weather Condition</label>
+            <select name="Weather_Condition" id="Weather_Condition">
+                <option value="Sunny">Sunny</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Cloudy">Cloudy</option>
+            </select>
+            <label for="Days_to_Harvest">Days to harvest</label>
+            <input type="number" name="Days_to_Harvest" id="Days_to_Harvest" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }} tons per hectare</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

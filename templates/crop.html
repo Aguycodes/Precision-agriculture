@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <div class="crop" style="background-image: url(/static/images/corn.jpg);">
+        <h2>Enter values for prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="nitrogen">Nitrogen</label><br>
+            <input type="number" name="nitrogen" required><br>
+            <label for="phosphorus">Phosphorus</label><br>
+            <input type="number" name="phosphorus" required><br>
+            <label for="potassium">Potassium</label><br>
+            <input type="number" name="potassium" required><br>
+            <label for="temperature">Temperature</label><br>
+            <input type="number" name="temperature" required><br>
+            <label for="humidity">Humidity</label><br>
+            <input type="number" name="humidity" required><br>
+            <label for="ph">PH value</label><br>
+            <input type="number" name="ph" required><br>
+            <label for="rainfall">Rainfall</label><br>
+            <input type="number" name="rainfall" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EzAgric</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <form action="/predict" method="POST">
-        <label for="nitrogen">Nitrogen</label><br>
-        <input type="number" name="nitrogen" required><br>
-        <label for="phosphorus">Phosphorus</label><br>
-        <input type="number" name="phosphorus" required><br>
-        <label for="potassium">Potassium</label><br>
-        <input type="number" name="potassium" required><br>
-        <label for="temperature">Temperature</label><br>
-        <input type="number" name="temperature" required><br>
-        <label for="humidity">Humidity</label><br>
-        <input type="number" name="humidity" required><br>
-        <label for="ph">PH value</label><br>
-        <input type="number" name="ph" required><br>
-        <label for="rainfall">Rainfall</label><br>
-        <input type="number" name="rainfall" required>
-        <button type="submit">Predict</button>
-    </form>
-
-    {% if prediction_text %}
-    <h2>{{ prediction_text }}</h2>
-    {% endif %}
+    <div class="head" style="background-image: url(/static/images/grass.jpg);">
+        <h1>WELCOME TO Ez-AGRIC</h1>
+        <h4>Using AI to improve agriculture</h4>
+    </div>
+    <div class="questions">
+        <img src="{{url_for('static', filename='images/farmer.jpg')}}" alt="farmer"><p>Are you a new farmer wondering how to get started?</p>
+        <img src="{{url_for('static', filename='images/corn.jpg')}}" alt="corn"><p>Are you wondering what crop would be best suited to your environmental conditions?</p>
+        <img src="{{url_for('static', filename='images/wheat.jpg')}}" alt="wheat"><p>Are you wondering about the diseases bothering your crops?</p>
+        <img src="{{url_for('static', filename='images/potato.jpg')}}" alt="potato"><p>Or do you want to calculate your harvest based on the crops you planted and environmental conditions?</p>
+    </div>
+    <div class="answer">
+        <p>EzAgric is the answer to your problems. With the power of AI technologies we can help you with your problems. From choosing a crop that will thrive based on your location, to detecting if your crop is healthy or diseased, to calculating your harvest at the end of your planting season. We also have a state of the art chatbot that is ready to answer all your agricultural questions.</p>
+        <a href="/home">TRY IT NOW</a>
+    </div>
 </body>
 </html>
